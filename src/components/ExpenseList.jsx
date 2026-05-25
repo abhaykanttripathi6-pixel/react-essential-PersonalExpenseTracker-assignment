@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import ExpenseItem from './ExpenseItem';
-import useExpense from '../hooks/useExpense';
 import Sort from './Sort';
 import sortExpense from '../Utilities/SortExpense';
 

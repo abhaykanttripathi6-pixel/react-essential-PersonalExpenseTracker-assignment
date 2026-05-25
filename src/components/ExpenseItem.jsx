@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { MdDelete } from "react-icons/md";
 import { BiSolidEdit } from "react-icons/bi";
 import Button from './Button';
-import Modal from './Modal';
 
 const ExpenseItem = ({ expenseDetail, showModal, setShowModal, setExpenseToRemove }) => {
 
