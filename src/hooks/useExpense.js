@@ -6,29 +6,30 @@ const useExpense = () => {
     const [formInputs, setFormInputs] = useState({
         description: '',
         amount: '',
-        category: 'Food',
+        category: '',
+        date:''
     });
 
     const [expense, setExpense] = useLocalStorage("expenseList", []);
 
     const addExpense = () => {
-        const { description, amount, category } = formInputs;
+        const { description, amount, category, date } = formInputs;
 
         if (amount <= 0 && amount !== '') {
             alert('Amount should neither be negative nor be 0.');
             return;
         }
 
-        if (!description || !amount || !category) return;
-        setExpense(prev => [...prev, { id: Date.now(), date: new Date().toISOString(), ...formInputs }]);
+        if (!description || !amount || !category || !date) return;
+        setExpense(prev => [...prev, { id: new Date(date).getTime() , ...formInputs }]);
         setFormInputs({
             description: '',
             amount: '',
-            category: 'Food',
+            category: '',
+            date:''
         })
 
     }
-
 
     return {
         formInputs,

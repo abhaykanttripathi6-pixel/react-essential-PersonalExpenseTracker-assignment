@@ -2,17 +2,6 @@
 
 body{
     min-height:100vh;
-    max-width:100rem;
-    padding: 1rem;
-    background: linear-gradient(to bottom right, purple 0%, rgb(45, 0, 128) 100%);
-    display: grid;
-    place-content: center;
+    width:100%;
+   
 }
-
-/* @media (max-width:768px){
-
-    body{
-    display: flex;
-}
-
-} */
