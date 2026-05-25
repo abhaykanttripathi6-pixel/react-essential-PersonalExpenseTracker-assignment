@@ -2,7 +2,6 @@ import React from 'react'
 
 const sortExpense = (expData, sortVal) => {
 
-    console.log('la', expData, sortVal);
 
     if (sortVal === 'default') return expData;
 

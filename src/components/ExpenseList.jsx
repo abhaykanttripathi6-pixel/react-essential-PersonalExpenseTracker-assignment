@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ExpenseItem from './ExpenseItem';
 import Sort from './Sort';
-import sortExpense from '../Utilities/SortExpense';
+import sortExpense from '../Utilities/sortExpense';
 
 const ExpenseList = ({ expense, setExpense, filterExp, showModal, setShowModal, setExpenseToRemove }) => {
 
