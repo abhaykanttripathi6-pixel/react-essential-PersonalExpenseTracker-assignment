@@ -18,11 +18,11 @@ const ExpenseForm = ({ formInputs, setFormInputs, expense, setExpense, addExpens
     }
 
     const handleUpdateExpense = () => {
-
+        
         const updatedExpenseList = expense.map((item) => {
 
             if (item.id === expenseToUpdate.id) {
-
+                
                 return {
                     ...item,
                     category: formInputs.category,
@@ -42,6 +42,7 @@ const ExpenseForm = ({ formInputs, setFormInputs, expense, setExpense, addExpens
 
     useEffect(() => {
         if (editModal && expenseToUpdate) {
+
             setFormInputs({
                 category: expenseToUpdate.category,
                 description: expenseToUpdate.description,
@@ -50,6 +51,7 @@ const ExpenseForm = ({ formInputs, setFormInputs, expense, setExpense, addExpens
             });
         }
     }, [editModal, expenseToUpdate]);
+    
 
     return (
         <section className='form-section'>
@@ -131,7 +133,12 @@ const ExpenseForm = ({ formInputs, setFormInputs, expense, setExpense, addExpens
                     </div>
 
                     {editModal ?
-                        <Button handleEvent={handleUpdateExpense}>Update Expense</Button>
+                        <Button handleEvent={()=>{
+                             const {description, amount, category, date} = formInputs;
+                            if (!description || !amount || !category || !date) return alert('Dscription, Amount, Category and Date can not empty while adding a expense.');
+                            handleUpdateExpense();
+                        }
+                        }>Update Expense</Button>
                         :
                         <Button type='submit' handleEvent={() => {
                             const {description, amount, category, date} = formInputs;
